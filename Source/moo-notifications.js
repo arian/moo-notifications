@@ -11,7 +11,7 @@ var NotificationCenter = {
 	},
 
 	postNotification: function(notification, message) {
-		if (this.observers[notification] || notification === '*') {
+		if (this.observers[notification]) {
 			this.observers[notification].each(function(observer) {
 				observer(message);
 			});
