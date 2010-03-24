@@ -11,11 +11,8 @@ var NotificationCenter = {
 	},
 
 	postNotification: function(notification, message) {
-		if (this.observers[notification]) {
-			this.observers[notification].each(function(observer) {
-				observer(message);
-			});
-		};
+		if (this.observers[notification])
+			for(observer in this.observers) this.observers[observer](message);
 	}
 
 };
